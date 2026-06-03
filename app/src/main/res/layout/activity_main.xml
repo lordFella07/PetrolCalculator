@@ -25,28 +25,28 @@
             android:text="Petrol Type:" />
 
         <Spinner
-            android:id="@+id/spinnerPetrolType"
+            android:id="@+id/idPetrolType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/petrol_types"
             android:layout_marginBottom="10dp"/>
 
         <EditText
-            android:id="@+id/etPrice"
+            android:id="@+id/petrolPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Petrol price per liter (RM)"
             android:inputType="numberDecimal" />
 
         <EditText
-            android:id="@+id/etUsage"
+            android:id="@+id/fuelUsage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Fuel usage (liters)"
             android:inputType="numberDecimal" />
 
         <Switch
-            android:id="@+id/switchBudi"
+            android:id="@+id/idBudi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="BUDI MADANI Eligible?"

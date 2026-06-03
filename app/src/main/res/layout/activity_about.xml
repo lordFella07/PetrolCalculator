@@ -27,8 +27,8 @@
             android:layout_height="100dp"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="24dp"
-            android:src="@mipmap/ic_launcher"
-            android:contentDescription="App Icon" />
+            android:contentDescription="App Icon"
+            android:src="@mipmap/ic_launcher_foreground" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,31 +44,91 @@
             android:text="Author Information"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="12dp"/>
 
-        <TextView
-            android:id="@+id/tvAuthorName"
-            android:layout_width="wrap_content"
+        <TableLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name: Muhammad Syariful Azharuddin bin Shieky"
-            android:textSize="16sp"
-            android:layout_marginBottom="4dp"/>
+            android:layout_marginBottom="32dp"
+            android:stretchColumns="2"> <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:paddingVertical="4dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textSize="16sp"
+                android:paddingHorizontal="8dp"/>
+            <TextView
+                android:id="@+id/tvAuthorName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Muhammad Syariful Azharuddin bin Shieky"
+                android:textSize="16sp"
+                android:singleLine="false"
+                android:maxLines="3"
+                android:scrollHorizontally="false" />
+        </TableRow>
 
-        <TextView
-            android:id="@+id/tvMatricNo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Matric No: 2025157145"
-            android:textSize="16sp"
-            android:layout_marginBottom="4dp"/>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingVertical="4dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Matric No"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="16sp"
+                    android:paddingHorizontal="8dp"/>
+                <TextView
+                    android:id="@+id/tvMatricNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2025157145"
+                    android:textSize="16sp"/>
+            </TableRow>
 
-        <TextView
-            android:id="@+id/tvCourse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Course: CS266"
-            android:textSize="16sp"
-            android:layout_marginBottom="32dp"/>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingVertical="4dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Course"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="16sp"
+                    android:paddingHorizontal="8dp"/>
+                <TextView
+                    android:id="@+id/tvCourse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CS266"
+                    android:textSize="16sp"/>
+            </TableRow>
+        </TableLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -81,7 +141,7 @@
             android:id="@+id/tvGithubLink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="https://github.com/yourusername/your-repo-name"
+            android:text="https://github.com/lordFella07/PetrolCalculator"
             android:textSize="16sp"
             android:autoLink="web"
             android:textColorLink="#0000EE"

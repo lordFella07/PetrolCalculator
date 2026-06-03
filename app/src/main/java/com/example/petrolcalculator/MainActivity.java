@@ -1,12 +1,9 @@
 package com.example.petrolcalculator;
 
 import android.os.Bundle;
-import androidx.activity.EdgeToEdge;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import android.os.Bundle;
+
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -15,13 +12,12 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Spinner spinnerPetrolType;
-    private EditText etPrice, etUsage;
-    private Switch switchBudi;
+    private Spinner idPetrolType;
+    private EditText petrolPrice, fuelUsage;
+    private Switch idBudi;
     private TextView tvTotalCost, tvRebate, tvTotalSaving;
 
     @Override
@@ -32,25 +28,25 @@ public class MainActivity extends AppCompatActivity {
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        spinnerPetrolType = findViewById(R.id.spinnerPetrolType);
-        etPrice = findViewById(R.id.etPrice);
-        etUsage = findViewById(R.id.etUsage);
-        switchBudi = findViewById(R.id.switchBudi);
+        idPetrolType = findViewById(R.id.idPetrolType);
+        petrolPrice = findViewById(R.id.petrolPrice);
+        fuelUsage = findViewById(R.id.fuelUsage);
+        idBudi = findViewById(R.id.idBudi);
         tvTotalCost = findViewById(R.id.tvTotalCost);
         tvRebate = findViewById(R.id.tvRebate);
         tvTotalSaving = findViewById(R.id.tvTotalSaving);
         Button btnCalculate = findViewById(R.id.btnCalculate);
 
-        spinnerPetrolType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        idPetrolType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedPetrol = parent.getItemAtPosition(position).toString();
 
                 if (selectedPetrol.equals("RON95")) {
-                    switchBudi.setVisibility(View.VISIBLE);
+                    idBudi.setVisibility(View.VISIBLE);
                 } else {
-                    switchBudi.setVisibility(View.GONE);
-                    switchBudi.setChecked(false);
+                    idBudi.setVisibility(View.GONE);
+                    idBudi.setChecked(false);
                 }
             }
 
@@ -63,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void calculateCosts() {
-        String priceStr = etPrice.getText().toString();
-        String usageStr = etUsage.getText().toString();
-        String petrolType = spinnerPetrolType.getSelectedItem().toString();
-        boolean isBudiEligible = switchBudi.isChecked();
+        String priceStr = petrolPrice.getText().toString();
+        String usageStr = fuelUsage.getText().toString();
+        String petrolType = idPetrolType.getSelectedItem().toString();
+        boolean isBudiEligible = idBudi.isChecked();
 
         if (priceStr.isEmpty() || usageStr.isEmpty()) {
             Toast.makeText(this, "Please enter price and usage", Toast.LENGTH_SHORT).show();
